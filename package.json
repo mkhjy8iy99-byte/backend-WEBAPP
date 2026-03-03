@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "nodemon",
-    "build": "npm install && npx tsc",
-    "start": "node ./dist/index.js",
-    "e2e": "cross-env DOTENV_CONFIG_PATH=.env.e2e nodemon"
+    "dev": "nodemon src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "engines": {
+    "node": "20.x"
   },
   "keywords": [],
   "author": "",
@@ -45,6 +47,6 @@
     "netlify-cli": "^20.0.2",
     "nodemon": "^3.1.7",
     "ts-node": "^10.9.2",
-    "typescript": "^5.6.2"
+    "typescript": "^5.9.3"
   }
 }

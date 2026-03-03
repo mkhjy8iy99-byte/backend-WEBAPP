@@ -84,6 +84,7 @@
 // })
 import express, { Response } from "express";
 import cookieParser from "cookie-parser";
+// import dotenv from "dotenv";
 import cors from "cors";
 import serverless from "serverless-http";
 import mongoose from "mongoose";
@@ -92,18 +93,17 @@ import { loginRouter } from "./routes/loginRouter";
 import { addHeroImageRouter } from "./routes/addHeroImageRouter";
 import { v2 as cloudinary } from "cloudinary";
 import dotenv from "dotenv";
+// dotenv.config();
 
 dotenv.config();
-
-const MONGODB_URL = "mongodb+srv://mzainmumtaz99_db_user:yf3e6r4ANk545NTk@cluster0.245yfua.mongodb.net/?appName=Cluster0";
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-
+// ZwJ1VUxBOBIgmYEP
 mongoose
-  .connect(MONGODB_URL)
+  .connect("mongodb+srv://mzainmumtaz99_db_user:ZwJ1VUxBOBIgmYEP@cluster0.245yfua.mongodb.net/")
   .then(() => console.log("Database connected successfully"))
   .catch((error) => console.error("Database connection error:", error));
 
@@ -140,4 +140,6 @@ app.get("/", (_req, res: Response) => {
 export const handler = serverless(app);
 
 // Local dev
-app.listen(8000, () => console.log("Server running on http://localhost:8000"));
+app.listen(3000, "0.0.0.0", () => {
+  console.log("Server running");
+});
