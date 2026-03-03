@@ -93,7 +93,6 @@ import { loginRouter } from "./routes/loginRouter";
 import { addHeroImageRouter } from "./routes/addHeroImageRouter";
 import { v2 as cloudinary } from "cloudinary";
 import dotenv from "dotenv";
-// dotenv.config();
 
 dotenv.config();
 
@@ -101,7 +100,6 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-// ZwJ1VUxBOBIgmYEP
 mongoose
   .connect("mongodb+srv://mzainmumtaz99_db_user:ZwJ1VUxBOBIgmYEP@cluster0.245yfua.mongodb.net/")
   .then(() => console.log("Database connected successfully"))
