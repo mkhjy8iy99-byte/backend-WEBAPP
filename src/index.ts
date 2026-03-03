@@ -136,8 +136,6 @@ app.get("/", (_req, res: Response) => {
   res.send("✅ Backend running successfully!");
 });
 
-// Serverless handler for Netlify
-export const handler = serverless(app);
 
 // Local dev
 app.listen(3000, "0.0.0.0", () => {
